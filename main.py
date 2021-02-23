@@ -25,6 +25,14 @@ def file_create(s_w, num):
     new_file = open(n_f, "a")
     new_file.write("The total occurrence of the word is:")
     new_file.write(str(len(num)))
+    for i in num:
+        new_file.write(i + "\n")
+
+    '''    for i in num:
+        count+=1
+        new_file.writelines(str(count)+' :')
+        new_file.writelines(i[1]+'\n')
+    '''
 
 
 " This the the main function of the project "
