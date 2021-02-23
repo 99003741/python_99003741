@@ -10,14 +10,14 @@ import re
 
 
 class Wordsearch:
-    def __init__(self):
+    def __init__(self, s_w):
         self.file_info = open("Input.txt", 'r')
-        self.file_read = self.file_info.read()
+        self.f_r = self.file_info.read()
+        self.s_w = s_w
 
-
-def search_for_word(s_w, f_r):
-    num = re.findall(s_w, f_r, re.M | re.I)
-    return (num)
+    def search_for_word(self):
+        num = re.findall(self.s_w, self.f_r, re.M | re.I)
+        return num
 
 
 def file_create(s_w, num):
@@ -29,8 +29,7 @@ def file_create(s_w, num):
 
 " This the the main function of the project "
 if __name__ == '__main__':
-    file = open("Input.txt", 'r')
-    file_read = file.read()
     search_word = input("Enter the word to be searched in the file\n")  # Asking user to enter the word to be searched
-    count = search_for_word(search_word, file_read)
+    find = Wordsearch(search_word)
+    count = find.search_for_word()
     file_create(search_word, count)
