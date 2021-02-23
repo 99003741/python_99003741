@@ -6,14 +6,23 @@ PS No: 99003741
 Contact: rajat.mehta@ltts.com
 Date of Creation: 23/02/2021
 """
+import re
 
 
-def search_for_word(key_word):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {key_word}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Wordsearch:
+    def __init__(self):
+        self.file_info = open("Input.txt", 'r')
+        self.file_read = self.file_info.read()
 
 
-# Press the green button in the gutter to run the script.
+def search_for_word(key_word, file_info):
+    num = re.findall(key_word, file_info, re.M | re.I)
+    print(len(num))
+
+
+" This the the main function of the project "
 if __name__ == '__main__':
-    search_word = input("Enter the word to be searched in the file\n")
-    search_for_word(search_word)
+    file = open("Input.txt", 'r')
+    file_read = file.read()
+    search_word = input("Enter the word to be searched in the file\n")  # Asking user to enter the word to be searched
+    search_for_word(search_word, file_read)
