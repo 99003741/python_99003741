@@ -7,9 +7,6 @@ Contact: rajat.mehta@ltts.com
 Date of Creation: 23/02/2021
 """
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
 
 def search_for_word(key_word):
     # Use a breakpoint in the code line below to debug your script.
@@ -18,5 +15,5 @@ def search_for_word(key_word):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    search_word = input("Enter the word to be searched in the file")
+    search_word = input("Enter the word to be searched in the file\n")
     search_for_word(search_word)
