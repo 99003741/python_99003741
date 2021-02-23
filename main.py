@@ -15,9 +15,16 @@ class Wordsearch:
         self.file_read = self.file_info.read()
 
 
-def search_for_word(key_word, file_info):
-    num = re.findall(key_word, file_info, re.M | re.I)
-    print(len(num))
+def search_for_word(s_w, f_r):
+    num = re.findall(s_w, f_r, re.M | re.I)
+    return (num)
+
+
+def file_create(s_w, num):
+    n_f = s_w + ".txt"
+    new_file = open(n_f, "a")
+    new_file.write("The total occurrence of the word is:")
+    new_file.write(str(len(num)))
 
 
 " This the the main function of the project "
@@ -25,4 +32,5 @@ if __name__ == '__main__':
     file = open("Input.txt", 'r')
     file_read = file.read()
     search_word = input("Enter the word to be searched in the file\n")  # Asking user to enter the word to be searched
-    search_for_word(search_word, file_read)
+    count = search_for_word(search_word, file_read)
+    file_create(search_word, count)
