@@ -24,7 +24,7 @@ def file_create(s_w, num):
     n_f = s_w + ".txt"
     new_file = open(n_f, "a")
     new_file.write("The total occurrence of the word is:")
-    new_file.write(str(len(num)))
+    new_file.write(str(len(num)) + "\n")
     for i in num:
         new_file.write(i + "\n")
 
