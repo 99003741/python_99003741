@@ -16,16 +16,23 @@ class Wordsearch:
         self.s_w = s_w
 
     def search_for_word(self):
+        count = 0
         n_f = self.s_w + ".txt"
         new_file = open(n_f, "a")
-        num = re.findall(self.s_w, self.f_r, re.M | re.I)
+        # num = re.findall(self.s_w, self.f_r, re.M | re.I)
 
+        for m in re.finditer('(?:^|\s+\S+) ' + self.s_w + ' ?(?:\s*\s+\S+|$)', self.f_r, re.IGNORECASE):
+            new_file.write(str(m) + '\n')
+            count += 1
+        new_file.write("Total occurrence of word " + self.s_w + " is: " + str(count))
+        new_file.close()
+
+    '''
         new_file.write("The total occurrence of the word is:")
         new_file.write(str(len(num)) + "\n")
         for i in num:
             new_file.write(i + "\n")
-
-    '''   
+  
         for i in num:
         count+=1
         new_file.writelines(str(count)+' :')
@@ -43,3 +50,4 @@ if __name__ == '__main__':
     key = search_word()
     find = Wordsearch(key)
     find.search_for_word()
+    find.file_info.close()
