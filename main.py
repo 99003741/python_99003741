@@ -66,8 +66,10 @@ def search_word():
 "------------------------------------------------ MAIN PROGRAM ----------------------------------------------------"
 " This the the main function of the project "
 if __name__ == '__main__':
-    key = search_word()
-    find = Words(key)
-    find.search_for_word()
-    find.file_info.close()
+    text = int(input("Number of words you want to search: "))
+    for i in range(text):
+        key = search_word()
+        find = Words(key)
+        find.search_for_word()
+        find.file_info.close()
 "----------------------------------------------- END OF PROGRAM ---------------------------------------------------"
