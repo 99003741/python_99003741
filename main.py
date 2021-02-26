@@ -1,6 +1,7 @@
 """
-Description: This program takes a user input as a keyword and search the occurrence of the word in the file and the
-                count total occurrences and store these details in a new file
+Description: This program takes a user input as a keyword and search the
+                occurrence of the word in the file and the
+        count total occurrences and store these details in a new file
 Author: RAJAT MEHTA
 PS No: 99003741
 Contact: rajat.mehta@ltts.com
@@ -8,7 +9,7 @@ Date of Creation: 23/02/2021
 """
 import re
 
-"----------------------------------------------- SUPER CLASS ---------------------------------------------------"
+"----------------------------- SUPER CLASS --------------------------------"
 """
 Basic or First class(Super class)
 This initializes the word to be searched and
@@ -23,12 +24,12 @@ class Wordsearch:
         self.s_w = s_w
 
 
-"------------------------------------------- END OF SUPER CLASS ------------------------------------------------"
+"--------------------- END OF SUPER CLASS --------------------------------"
 
-"----------------------------------------------- SUB CLASS -----------------------------------------------------"
+"------------------------ SUB CLASS --------------------------------------"
 """
-This is second class which has inherited the attributes of first class(sub class)
-This class finds the user given word in the file and 
+This is second class which has inherited attributes of first class(sub class)
+This class finds the user given word in the file and
 creates a new file and print the result in that file
 """
 
@@ -51,22 +52,23 @@ class Words(Wordsearch):
         new_file.close()
 
 
-"------------------------------------------- END OF SUB CLASS ------------------------------------------------"
+"--------------------- END OF SUB CLASS ----------------------------------"
 
-"------------------------------------------- USER INPUT FUNCTION ------------------------------------------------"
+"-------------------- USER INPUT FUNCTION --------------------------------"
 """
 This function ask the user to input the words to be searched in the file
 """
 
 
 def search_word():
-    keyword = input("Enter the word to be searched in the file\n")  # Asking user to enter word to be searched
+    # Asking user to enter word to be searched
+    keyword = input("Enter the word to be searched in the file\n")
     return keyword
 
 
-"----------------------------------------- END OF USER INPUT FUNCTION ---------------------------------------------"
+"--------------------- END OF USER INPUT FUNCTION ------------------------"
 
-"------------------------------------------------ MAIN PROGRAM ----------------------------------------------------"
+"-------------------------- MAIN PROGRAM ---------------------------------"
 " This the the main function of the project "
 if __name__ == '__main__':
     text = int(input("Number of words you want to search: "))
@@ -75,4 +77,4 @@ if __name__ == '__main__':
         find = Words(key)
         find.search_for_word()
         find.file_info.close()
-"----------------------------------------------- END OF PROGRAM ---------------------------------------------------"
+"-------------------------- END OF PROGRAM ---------------------------------"
