@@ -44,7 +44,10 @@ class Words(Wordsearch):
                 var = m[num - 1] + " " + m[num] + " " + m[num + 1] + '\n'
                 new_file.write(str(var))
                 count += 1
-        new_file.write("Total occurrence of word " + self.s_w + " is: " + str(count))
+        if count != 0:
+            new_file.write("Total occurrence of word " + self.s_w + " is: " + str(count))
+        elif count == 0:
+            new_file.write("The word " + self.s_w + " is not found in the file :(")
         new_file.close()
 
 
